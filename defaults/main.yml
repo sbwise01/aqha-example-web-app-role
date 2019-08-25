@@ -1,0 +1,6 @@
+---
+# Default variables for this role
+
+# Valid values are:  BAKE, DEPLOY, FULL
+deploy_mode: 'FULL'
+environment_name: 'production'

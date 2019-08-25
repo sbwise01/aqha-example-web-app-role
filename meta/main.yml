@@ -1,0 +1,17 @@
+galaxy_info:
+  author: Brad Wise
+  description: Install and configure AQHA Example Web App
+
+  license: license (MIT)
+
+  min_ansible_version: 2.3
+
+  platforms:
+   - name: Linux
+     versions:
+     - all
+
+  galaxy_tags:
+    - linux
+
+dependencies: []

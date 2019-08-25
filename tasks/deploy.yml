@@ -1,0 +1,37 @@
+---
+
+- name: Create site directories
+  file:
+    path: '{{ item }}'
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: 0755
+    recurse: 'yes'
+  with_items:
+    - '/var/www/html/meta/availability'
+    - '/var/www/html/meta/health'
+
+- name: Create main site page
+  template:
+    src: index.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create availability page
+  template:
+    src: availability.j2
+    dest: /var/www/html/meta/availability/availability.html
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Create health page
+  template:
+    src: health.j2
+    dest: /var/www/html/meta/health/health.html
+    owner: root
+    group: root
+    mode: 0644

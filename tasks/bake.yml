@@ -1,0 +1,20 @@
+---
+
+- name: Confirm httpd is latest
+  yum:
+    name: httpd
+    state: latest
+
+- name: Configure /etc/httpd/conf.d/aqha-example-web.conf
+  template:
+    src: aqha-example-web.conf.j2
+    dest: /etc/httpd/conf.d/aqha-example-web.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: setup httpd service
+  service:
+    name=httpd
+    state=stopped
+    enabled=yes

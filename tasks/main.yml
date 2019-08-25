@@ -1,0 +1,9 @@
+---
+
+- name: Bake Web App
+  include_tasks: bake.yml
+  when: deploy_mode == 'BAKE' or deploy_mode == 'FULL'
+
+- name: Deploy Web App
+  include_tasks: deploy.yml
+  when: deploy_mode == 'DEPLOY' or deploy_mode == 'FULL'
